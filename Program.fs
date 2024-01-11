@@ -28,8 +28,8 @@ type Record1 = {
     AliasProp: Alias
 }
 
-let serialize<'T> (x: 'T) =
-    let options = System.Text.Json.JsonSerializerOptions()
+let serializerOptions =
+    let options = System.Text.Json.JsonSerializerOptions(WriteIndented = true)
     options.Converters.Add (
         JsonFSharpConverter (
             unionEncoding =
@@ -38,8 +38,13 @@ let serialize<'T> (x: 'T) =
                  ||| JsonUnionEncoding.UnwrapFieldlessTags)
         )
     )
+    options
 
-    System.Text.Json.JsonSerializer.Serialize<'T>(x, options)
+let serialize<'T> (x: 'T) =
+    System.Text.Json.JsonSerializer.Serialize<'T>(x, serializerOptions)
+
+let deserialize<'T> (x: string): 'T =
+    JsonSerializer.Deserialize<'T>(x, serializerOptions)
 
 let getIntent<'a when 'a :> ISchemaKeywordIntent> (intents: ISchemaKeywordIntent seq) =
     let get (intent: ISchemaKeywordIntent) =
@@ -80,10 +85,41 @@ let main _ =
     let schema = 
         JsonSchemaBuilder().FromType<Record1>(schemaConfig).Build()
 
+    printfn "---Schema--------------------"
     let text =
         serialize schema
         
     printfn "%s" text;
+    printfn "-----------------------------"
+
+    let test = {
+        Record1.IntProp = 10
+        FloatProp = 1.0
+        StringProp = "string"
+        OptionProp = Some 2
+        ListProp = [ ]
+        RecordProp = { x = 3 }
+        GuidProp = System.Guid.Empty
+        DateTimeProp = System.DateTime(2024, 04, 02)
+        SnakeCaseProp = 4
+        AliasProp = "alias"
+    }
+    printfn "---Serialized----------------"
+    let s = serialize test
+    printfn "%s" s
+    let nodes = System.Text.Json.Nodes.JsonNode.Parse(s)
+    printfn "-----------------------------"
+
+    printfn "---Deserialized--------------"
+    let deserialized = deserialize<Record1> s
+    printfn "%A" deserialized
+    printfn "-----------------------------"
+
+    printfn "---Evaluation----------------"
+    let results = schema.Evaluate(nodes, EvaluationOptions(OutputFormat = OutputFormat.List))
+    printfn "%s" (serialize results)
+    printfn "-----------------------------"
+
 
     0
     

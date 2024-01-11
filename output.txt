@@ -1,0 +1,256 @@
+---Schema--------------------
+{
+  "type": "object",
+  "properties": {
+    "IntProp": {
+      "type": "integer",
+      "minimum": 10,
+      "readOnly": true
+    },
+    "FloatProp": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "readOnly": true
+    },
+    "StringProp": {
+      "$ref": "#/$defs/string"
+    },
+    "OptionProp": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "readOnly": true
+    },
+    "ListProp": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "readOnly": true
+      },
+      "uniqueItems": true,
+      "readOnly": true
+    },
+    "RecordProp": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "$ref": "#/$defs/integer"
+        }
+      },
+      "readOnly": true
+    },
+    "GuidProp": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "DateTimeProp": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "snake_case_prop": {
+      "$ref": "#/$defs/integer"
+    },
+    "AliasProp": {
+      "$ref": "#/$defs/string"
+    }
+  },
+  "$defs": {
+    "string": {
+      "type": "string",
+      "readOnly": true
+    },
+    "integer": {
+      "type": "integer",
+      "readOnly": true
+    }
+  }
+}
+-----------------------------
+---Serialized----------------
+{
+  "IntProp": 10,
+  "FloatProp": 1,
+  "StringProp": "string",
+  "OptionProp": 2,
+  "ListProp": [],
+  "RecordProp": {
+    "x": 3
+  },
+  "GuidProp": "00000000-0000-0000-0000-000000000000",
+  "DateTimeProp": "2024-04-02T00:00:00",
+  "snake_case_prop": 4,
+  "AliasProp": "alias"
+}
+-----------------------------
+---Deserialized--------------
+{ IntProp = 10
+  FloatProp = 1.0
+  StringProp = "string"
+  OptionProp = Some 2
+  ListProp = []
+  RecordProp = { x = 3 }
+  GuidProp = 00000000-0000-0000-0000-000000000000
+  DateTimeProp = 02/04/2024 00:00:00
+  SnakeCaseProp = 4
+  AliasProp = "alias" }
+-----------------------------
+---Evaluation----------------
+{
+  "valid": true,
+  "details": [
+    {
+      "valid": true,
+      "evaluationPath": "",
+      "schemaLocation": "https://json-everything.net/e857767b4e#",
+      "instanceLocation": "",
+      "annotations": {
+        "properties": [
+          "IntProp",
+          "FloatProp",
+          "StringProp",
+          "OptionProp",
+          "ListProp",
+          "RecordProp",
+          "GuidProp",
+          "DateTimeProp",
+          "snake_case_prop",
+          "AliasProp"
+        ]
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/IntProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/IntProp",
+      "instanceLocation": "/IntProp",
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/FloatProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/FloatProp",
+      "instanceLocation": "/FloatProp",
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/StringProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/StringProp",
+      "instanceLocation": "/StringProp"
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/OptionProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/OptionProp",
+      "instanceLocation": "/OptionProp",
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/ListProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/ListProp",
+      "instanceLocation": "/ListProp",
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/RecordProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/RecordProp",
+      "instanceLocation": "/RecordProp",
+      "annotations": {
+        "properties": [
+          "x"
+        ],
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/GuidProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/GuidProp",
+      "instanceLocation": "/GuidProp",
+      "annotations": {
+        "format": "uuid",
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/DateTimeProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/DateTimeProp",
+      "instanceLocation": "/DateTimeProp",
+      "annotations": {
+        "format": "date-time",
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/snake_case_prop",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/snake_case_prop",
+      "instanceLocation": "/snake_case_prop"
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/AliasProp",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/AliasProp",
+      "instanceLocation": "/AliasProp"
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/StringProp/$ref",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/string",
+      "instanceLocation": "/StringProp",
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/RecordProp/properties/x",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/RecordProp/properties/x",
+      "instanceLocation": "/RecordProp/x"
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/snake_case_prop/$ref",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/integer",
+      "instanceLocation": "/snake_case_prop",
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/AliasProp/$ref",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/string",
+      "instanceLocation": "/AliasProp",
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "valid": true,
+      "evaluationPath": "/properties/RecordProp/properties/x/$ref",
+      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/integer",
+      "instanceLocation": "/RecordProp/x",
+      "annotations": {
+        "readOnly": true
+      }
+    }
+  ]
+}
+-----------------------------
