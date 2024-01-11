@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "IntProp": {
+      "type": "integer",
+      "minimum": 10,
+      "readOnly": true
+    },
+    "FloatProp": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "readOnly": true
+    },
+    "StringProp": {
+      "type": "string",
+      "readOnly": true
+    },
+    "OptionProp": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "readOnly": true
+    },
+    "ListProp": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "readOnly": true
+      },
+      "uniqueItems": true,
+      "readOnly": true
+    },
+    "RecordProp": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "$ref": "#/$defs/integer"
+        }
+      },
+      "readOnly": true
+    },
+    "GuidProp": {
+      "type": "string",
+      "format": "uuid",
+      "readOnly": true
+    },
+    "DateTimeProp": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "snake_case_prop": {
+      "$ref": "#/$defs/integer"
+    }
+  },
+  "$defs": {
+    "integer": {
+      "type": "integer",
+      "readOnly": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>json_schema_test</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.SystemTextJson" Version="1.2.42" />
+    <PackageReference Include="JsonSchema.Net" Version="5.5.0" />
+    <PackageReference Include="JsonSchema.Net.Generation" Version="3.5.1" />
+  </ItemGroup>
+
+</Project>
