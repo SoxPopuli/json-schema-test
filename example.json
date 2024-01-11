@@ -14,8 +14,7 @@
       "readOnly": true
     },
     "StringProp": {
-      "type": "string",
-      "readOnly": true
+      "$ref": "#/$defs/string"
     },
     "OptionProp": {
       "type": [
@@ -54,9 +53,16 @@
     },
     "snake_case_prop": {
       "$ref": "#/$defs/integer"
+    },
+    "AliasProp": {
+      "$ref": "#/$defs/string"
     }
   },
   "$defs": {
+    "string": {
+      "type": "string",
+      "readOnly": true
+    },
     "integer": {
       "type": "integer",
       "readOnly": true

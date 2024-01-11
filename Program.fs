@@ -9,6 +9,7 @@ open Json.Schema.Generation.Intents
 
 
 type Nested = { x: int }
+type Alias = string
 
 type Record1 = {
     [<Minimum(10.0)>]
@@ -24,6 +25,7 @@ type Record1 = {
     DateTimeProp: System.DateTime
     [<JsonPropertyName("snake_case_prop")>]
     SnakeCaseProp: int
+    AliasProp: Alias
 }
 
 let serialize<'T> (x: 'T) =
