@@ -16,6 +16,7 @@ type Record1 = {
     IntProp: int
     [<Nullable(true)>]
     FloatProp: float
+    [<Required>]
     StringProp: string
     OptionProp: int option
     [<UniqueItems(true)>]
@@ -83,7 +84,10 @@ let schemaConfig =
 [<EntryPoint>]
 let main _ =
     let schema = 
-        JsonSchemaBuilder().FromType<Record1>(schemaConfig).Build()
+        JsonSchemaBuilder()
+            .Schema("https://json-schema.org/draft/2020-12/schema")
+            .FromType<Record1>(schemaConfig)
+            .Build()
 
     printfn "---Schema--------------------"
     let text =

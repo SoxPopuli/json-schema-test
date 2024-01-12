@@ -1,5 +1,6 @@
 ---Schema--------------------
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "IntProp": {
@@ -59,6 +60,9 @@
       "$ref": "#/$defs/string"
     }
   },
+  "required": [
+    "StringProp"
+  ],
   "$defs": {
     "string": {
       "type": "string",
@@ -106,7 +110,7 @@
     {
       "valid": true,
       "evaluationPath": "",
-      "schemaLocation": "https://json-everything.net/e857767b4e#",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#",
       "instanceLocation": "",
       "annotations": {
         "properties": [
@@ -126,7 +130,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/IntProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/IntProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/IntProp",
       "instanceLocation": "/IntProp",
       "annotations": {
         "readOnly": true
@@ -135,7 +139,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/FloatProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/FloatProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/FloatProp",
       "instanceLocation": "/FloatProp",
       "annotations": {
         "readOnly": true
@@ -144,13 +148,13 @@
     {
       "valid": true,
       "evaluationPath": "/properties/StringProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/StringProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/StringProp",
       "instanceLocation": "/StringProp"
     },
     {
       "valid": true,
       "evaluationPath": "/properties/OptionProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/OptionProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/OptionProp",
       "instanceLocation": "/OptionProp",
       "annotations": {
         "readOnly": true
@@ -159,7 +163,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/ListProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/ListProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/ListProp",
       "instanceLocation": "/ListProp",
       "annotations": {
         "readOnly": true
@@ -168,7 +172,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/RecordProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/RecordProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/RecordProp",
       "instanceLocation": "/RecordProp",
       "annotations": {
         "properties": [
@@ -180,7 +184,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/GuidProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/GuidProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/GuidProp",
       "instanceLocation": "/GuidProp",
       "annotations": {
         "format": "uuid",
@@ -190,7 +194,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/DateTimeProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/DateTimeProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/DateTimeProp",
       "instanceLocation": "/DateTimeProp",
       "annotations": {
         "format": "date-time",
@@ -200,19 +204,19 @@
     {
       "valid": true,
       "evaluationPath": "/properties/snake_case_prop",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/snake_case_prop",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/snake_case_prop",
       "instanceLocation": "/snake_case_prop"
     },
     {
       "valid": true,
       "evaluationPath": "/properties/AliasProp",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/AliasProp",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/AliasProp",
       "instanceLocation": "/AliasProp"
     },
     {
       "valid": true,
       "evaluationPath": "/properties/StringProp/$ref",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/string",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/$defs/string",
       "instanceLocation": "/StringProp",
       "annotations": {
         "readOnly": true
@@ -221,13 +225,13 @@
     {
       "valid": true,
       "evaluationPath": "/properties/RecordProp/properties/x",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/properties/RecordProp/properties/x",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/properties/RecordProp/properties/x",
       "instanceLocation": "/RecordProp/x"
     },
     {
       "valid": true,
       "evaluationPath": "/properties/snake_case_prop/$ref",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/integer",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/$defs/integer",
       "instanceLocation": "/snake_case_prop",
       "annotations": {
         "readOnly": true
@@ -236,7 +240,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/AliasProp/$ref",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/string",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/$defs/string",
       "instanceLocation": "/AliasProp",
       "annotations": {
         "readOnly": true
@@ -245,7 +249,7 @@
     {
       "valid": true,
       "evaluationPath": "/properties/RecordProp/properties/x/$ref",
-      "schemaLocation": "https://json-everything.net/e857767b4e#/$defs/integer",
+      "schemaLocation": "https://json-everything.net/0b8ddc2815#/$defs/integer",
       "instanceLocation": "/RecordProp/x",
       "annotations": {
         "readOnly": true
